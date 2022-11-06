@@ -1,0 +1,38 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 260px;
+  background-color: black;
+  row-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  .logo_details {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+
+    .icon {
+      color: #fff;
+      height: 1.8rem;
+      margin-right: 1.5rem;
+    }
+
+    .logo_name {
+      font-size: 22px;
+      color: #fff;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .nav_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

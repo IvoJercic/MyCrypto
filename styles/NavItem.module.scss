@@ -1,0 +1,72 @@
+.navItemContainer {
+  display: flex;
+  flex-direction: column;
+
+  &.show {
+    background-color: rgb(72, 80, 62);
+  }
+
+  .navMainItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 500;
+    font-size: larger;
+    padding: 1.2rem 2rem;
+
+    &:hover {
+      opacity: 0.6;
+
+      &.active {
+        opacity: 1 !important;
+      }
+    }
+
+    &.active {
+      background-color: rgba(255, 255, 68, 0.8);
+
+      .link {
+        color: black;
+      }
+
+      .icon {
+        color: black !important;
+      }
+    }
+
+    .link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: white;
+      column-gap: 1.5rem;
+
+      .icon {
+        color: white;
+        height: 1.8rem;
+        width: 1.8rem;
+        padding: 0.3 rem;
+      }
+
+      .arrowIcon {
+        color: white;
+        height: 1.2rem;
+        width: 1.2rem;
+      }
+    }
+  }
+
+  .navSubItems {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+
+    &.hide {
+      display: none;
+    }
+
+    &.show {
+      display: flex;
+    }
+  }
+}

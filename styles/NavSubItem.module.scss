@@ -1,0 +1,33 @@
+.navSubItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 500;
+  font-size: medium;
+  padding: 0.8rem 2rem;
+
+  &:hover {
+    opacity: 0.6;
+
+    &.active {
+      opacity: 1 !important;
+    }
+  }
+
+  &.active {
+    background-color: rgba(255, 255, 68, 0.8);
+
+    .link {
+      color: black;
+    }
+  }
+
+  .link {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: flex-start;
+    padding-left: 3.3rem;
+    opacity: 0.5;
+  }
+}
