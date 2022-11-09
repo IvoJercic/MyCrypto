@@ -1,9 +1,8 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import styles from "../styles/NavSubItem.module.scss";
-import isSubItem from "../utils/isSubiItem";
 
-const NavSubItem = ({ href, text, parentPath, currentPath }) => {
+const NavSubItem = ({ href, text, currentPath }) => {
   const [active, setActive] = useState(false);
   useEffect(() => {
     if (href === currentPath) {

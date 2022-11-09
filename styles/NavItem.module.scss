@@ -3,7 +3,8 @@
   flex-direction: column;
 
   &.show {
-    background-color: rgb(72, 80, 62);
+    background-color: rgba(128, 128, 123, 0.377);
+    transition: all 0.5s ease;
   }
 
   .navMainItem {
@@ -16,14 +17,17 @@
 
     &:hover {
       opacity: 0.6;
+      transition: all 0.5s ease;
 
       &.active {
         opacity: 1 !important;
+        transition: all 0.5s ease;
       }
     }
 
     &.active {
       background-color: rgba(255, 255, 68, 0.8);
+      transition: all 0.5s ease;
 
       .link {
         color: black;
@@ -40,6 +44,7 @@
       align-items: center;
       color: white;
       column-gap: 1.5rem;
+      text-decoration: none;
 
       .icon {
         color: white;
@@ -63,10 +68,12 @@
 
     &.hide {
       display: none;
+      transition: all 0.5s ease;
     }
 
     &.show {
       display: flex;
+      transition: all 0.5s ease;
     }
   }
 }

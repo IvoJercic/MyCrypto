@@ -16,20 +16,14 @@ const NavItem = ({ href, text, icon, child }) => {
   useEffect(() => {
     if (href === router.pathname) {
       setOpen(true);
+      setActive(true);
     } else {
       setOpen(false);
-    }
-
-    if (href !== router.pathname) {
       setActive(false);
-
       const res = isSubItem(href, router.pathname);
-      console.log(res);
       if (res) {
         setOpen(true);
       }
-    } else {
-      setActive(true);
     }
   }, [router.pathname]);
 
@@ -60,17 +54,15 @@ const NavItem = ({ href, text, icon, child }) => {
       </div>
       {child && (
         <div
-          className={styles.navSubItems.concat(
-            " ",
+          className={`${styles.navSubItems} ${
             open ? styles.show : styles.hide
-          )}
+          }`}
         >
           {child.map((item) => {
             return (
               <NavSubItem
                 {...item}
                 key={item.text}
-                parentPath={href}
                 currentPath={router.pathname}
               />
             );

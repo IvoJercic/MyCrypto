@@ -4,7 +4,6 @@ import React from "react";
 import MENU from "../constants/menu";
 import styles from "../styles/SideBar.module.scss";
 import NavItem from "./NavItem";
-import { useRouter } from "next/router";
 
 export const SideBar = () => {
   return (
