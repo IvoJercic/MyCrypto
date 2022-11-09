@@ -33,6 +33,78 @@
   .nav_links {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    max-width: 100%;
+    height: calc(
+      100% - (5rem + 6rem + 2rem)
+    ); //5 rem visina povise sidebara 6 rem visina onoga ispod sidebara 2 rama paddinga 1 dolje jedan gore
+    overflow-y: scroll;
+  }
+
+  .profile_div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
     justify-content: center;
+    align-items: center;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(128, 128, 123, 0.377);
+    height: 6rem;
+
+    .profile_img {
+      border-radius: 100%;
+    }
+
+    .profile_details {
+      display: flex;
+      flex-direction: column;
+      color: white;
+      justify-content: center;
+      align-items: center;
+
+      .profile_name {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .profile_email {
+        font-size: 12px;
+        max-width: 100%;
+      }
+    }
+
+    .icon {
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+    height: calc(100% - (5rem + 6rem + 2rem));
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: none;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.44, rgb(140, 148, 28)),
+      color-stop(0.72, rgb(140, 148, 28)),
+      color-stop(0.86, rgb(140, 148, 28))
+    );
   }
 }
