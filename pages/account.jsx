@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { useSession, signOut, getSession } from "next-auth/react";
+import styles from "../styles/Home.module.scss";
 
 const account = () => {
   //required true nas automatski redirecta ako nismo auth
@@ -9,7 +10,7 @@ const account = () => {
   //   if (status === "authenticated") {
   if (session) {
     return (
-      <div>
+      <div className={styles.page}>
         Welcome {session.user.name}
         <button onClick={() => signOut()}>Sign out</button>
       </div>

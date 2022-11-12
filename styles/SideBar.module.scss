@@ -8,6 +8,37 @@
   row-gap: 2rem;
   display: flex;
   flex-direction: column;
+  transition: all 0.5s ease;
+
+  &.closed {
+    transition: all 0.5s ease;
+    width: 100px;
+
+    .logo_name {
+      visibility: hidden;
+    }
+
+    .profile_details {
+      display: none !important;
+    }
+
+    .logo_details {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .profile_div {
+      width: 100%;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      row-gap: 25px;
+
+      .icon {
+        height: 20px;
+      }
+    }
+  }
 
   .logo_details {
     height: 5rem;
@@ -35,10 +66,11 @@
     flex-direction: column;
     overflow-x: hidden;
     max-width: 100%;
-    height: calc(
-      100% - (5rem + 6rem + 2rem)
-    ); //5 rem visina povise sidebara 6 rem visina onoga ispod sidebara 2 rama paddinga 1 dolje jedan gore
-    overflow-y: scroll;
+    //Ukljucit ako ima puno stvari u menuu
+    // height: calc(
+    //   100% - (5rem + 6rem + 2rem)
+    // ); //5 rem visina povise sidebara 6 rem visina onoga ispod sidebara 2 rama paddinga 1 dolje jedan gore
+    // overflow-y: scroll;
   }
 
   .profile_div {
@@ -56,6 +88,12 @@
 
     .profile_img {
       border-radius: 100%;
+    }
+
+    .iconDiv {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
     }
 
     .profile_details {
@@ -80,6 +118,7 @@
     .icon {
       color: white;
       cursor: pointer;
+      height: 20px;
     }
   }
 

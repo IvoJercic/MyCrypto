@@ -8,7 +8,7 @@ import { CURRENT_ROUTE } from "../constants/routes";
 import isSubItem from "../utils/isSubiItem";
 import { useRouter } from "next/router";
 
-const NavItem = ({ href, text, icon, child }) => {
+const NavItem = ({ href, text, icon, child, closed }) => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(false);
   const router = useRouter();
@@ -31,16 +31,19 @@ const NavItem = ({ href, text, icon, child }) => {
     <div
       className={`${styles.navItemContainer} ${
         open ? styles.show : styles.hide
-      }`}
+      } ${closed && styles.closed}`}
     >
-      <div className={`${styles.navMainItem} ${active && styles.active}`}>
+      <div
+        className={`${styles.navMainItem} ${active && styles.active}`}
+        data-value={text}
+      >
         <Link
           href={child ? CURRENT_ROUTE : href}
           className={styles.link}
           onClick={() => setOpen((val) => !val)}
         >
           <FontAwesomeIcon icon={icon} className={styles.icon} />
-          {text}
+          <span className={styles.navItemText}>{text}</span>
           {child &&
             (open ? (
               <FontAwesomeIcon icon={faArrowUp} className={styles.arrowIcon} />

@@ -12,22 +12,8 @@ import { faBaby, faCake, faHouse } from "@fortawesome/free-solid-svg-icons";
 const MENU = [
   {
     text: "Home",
-    href: CURRENT_ROUTE,
+    href: HOME_ROUTE,
     icon: faBaby,
-    child: [
-      {
-        text: "Home2",
-        href: PAGE1_ROUTE,
-      },
-      {
-        text: "Home3",
-        href: PAGE2_ROUTE,
-      },
-      {
-        text: "Home4",
-        href: PAGE3_ROUTE,
-      },
-    ],
   },
   {
     text: "Account",

@@ -2,6 +2,30 @@
   display: flex;
   flex-direction: column;
 
+  &.closed {
+    .navItemText,
+    .arrowIcon {
+      visibility: hidden;
+    }
+
+    .navMainItem:hover {
+      background-color: rgba(255, 255, 68, 0.8);
+      opacity: 1;
+
+      &::after {
+        background-color: rgba(255, 255, 68, 0.8);
+        content: attr(data-value);
+        padding: 1.2rem 2rem;
+        position: absolute;
+        left: 100px;
+        z-index: 1;
+        border-color: rgba(128, 128, 123, 0.377);
+        border-style: solid;
+        border-width: 1px 1px 1px 0;
+      }
+    }
+  }
+
   &.show {
     background-color: rgba(128, 128, 123, 0.377);
     transition: all 0.5s ease;
