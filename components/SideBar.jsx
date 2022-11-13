@@ -5,16 +5,18 @@ import {
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import MENU from "../constants/menu";
 import styles from "../styles/SideBar.module.scss";
 import NavItem from "./NavItem";
 import Image from "next/image";
 import { useSession, signOut, getSession } from "next-auth/react";
+import { SideBarContext } from "../contexts/sidebarContext";
 
 export const SideBar = () => {
   const { data: session } = useSession();
-  const [closed, setClosed] = useState(false);
+  const { openSideBar, setOpenSideBar } = useContext(SideBarContext);
+
   const imageLoader = () => {
     return `${session.user.image}?w=${50}`;
   };
@@ -22,14 +24,14 @@ export const SideBar = () => {
 
   return (
     session && (
-      <div className={`${styles.sidebar} ${closed && styles.closed}`}>
+      <div className={`${styles.sidebar} ${!openSideBar && styles.closed}`}>
         <div className={styles.logo_details} data-value={"MyCrpyto"}>
           <FontAwesomeIcon icon={faCoffee} className={styles.icon} />
           <span className={styles.logo_name}>MyCrypto</span>
         </div>
         <div className={styles.nav_links}>
           {MENU.map((item) => {
-            return <NavItem {...item} key={item.text} closed={closed} />;
+            return <NavItem {...item} key={item.text} closed={!openSideBar} />;
           })}
         </div>
         <div className={styles.profile_div}>
@@ -55,9 +57,9 @@ export const SideBar = () => {
               />
             </div>
             <FontAwesomeIcon
-              icon={closed ? faAngleRight : faAngleLeft}
+              icon={!openSideBar ? faAngleRight : faAngleLeft}
               className={styles.icon}
-              onClick={() => setClosed((val) => !val)}
+              onClick={() => setOpenSideBar((val) => !val)}
             />
           </div>
         </div>

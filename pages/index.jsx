@@ -1,8 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
+import { useSession, signOut, getSession } from "next-auth/react";
+import { getServerSideProps } from "../utils/getServerSideProps";
 
 export default function Home() {
+  const { data: session } = useSession();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,3 +19,5 @@ export default function Home() {
     </div>
   );
 }
+
+export { getServerSideProps };
