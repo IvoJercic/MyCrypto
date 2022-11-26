@@ -5,8 +5,6 @@ import { useSession, signOut, getSession } from "next-auth/react";
 import { getServerSideProps } from "../utils/getServerSideProps";
 
 export default function Home() {
-  const { data: session } = useSession();
-
   return (
     <div className={styles.container}>
       <Head>
