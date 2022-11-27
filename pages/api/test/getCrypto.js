@@ -3,7 +3,6 @@ import axios from "axios";
 export default async function getCrypto(req, res) {
   let response = null;
   try {
-    console.log("DOHVACAM");
     response = await axios.get(
       "https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest",
       {

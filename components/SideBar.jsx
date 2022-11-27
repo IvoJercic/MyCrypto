@@ -20,14 +20,15 @@ export const SideBar = () => {
   const imageLoader = () => {
     return `${session.user.image}?w=${50}`;
   };
-  console.log(session);
-
   return (
     session && (
       <div className={`${styles.sidebar} ${!openSideBar && styles.closed}`}>
-        <div className={styles.logo_details} data-value={"MyCrpyto"}>
-          <FontAwesomeIcon icon={faCoffee} className={styles.icon} />
-          <span className={styles.logo_name}>MyCrypto</span>
+        <div className={`${styles.logo_details} ${!openSideBar && styles.closed}`} data-value={"MyCrpyto"}>
+          {openSideBar ? (
+            <img src="/logoBig.png" className={styles.logo_img} />
+          ) : (
+            <img src="/logoSmall.png" className={styles.logo_img} />
+          )}
         </div>
         <div className={styles.nav_links}>
           {MENU.map((item) => {

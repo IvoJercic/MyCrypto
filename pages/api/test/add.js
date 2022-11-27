@@ -9,7 +9,7 @@ import connectMongoDB from "../../../utils/connectMongoDB";
  * @param {import('next'.NextApiRequest)} req
  * @param {import('next'.NextApiResponse)} res
  */
-export  default async function addTest(req, res) {
+export default async function addTest(req, res) {
   const { name, email } = req.body;
   console.log("CONNECTING TO MONGO...");
 
@@ -20,5 +20,3 @@ export  default async function addTest(req, res) {
   console.log(test);
   res.json({ test });
 }
-
-
